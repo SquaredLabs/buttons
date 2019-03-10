@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev:backend": "cd packages/buttons && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SquaredLabs/buttons.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SquaredLabs/buttons/issues"
+  },
+  "homepage": "https://github.com/SquaredLabs/buttons#readme",
+  "dependencies": {
+    "lerna": "^3.13.1",
+    "sequelize": "^4.43.0",
+    "sequelize-cli": "^5.4.0",
+    "sqlite3": "^4.0.6"
+  }
+}

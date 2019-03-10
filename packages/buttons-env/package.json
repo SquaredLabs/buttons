@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "name": "buttons-env",
+  "version": "0.0.1",
+  "dependencies": {
+    "dotenv": "^6.2.0"
+  }
+}

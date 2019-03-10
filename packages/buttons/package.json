@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "name": "buttons",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "nodemon --experimental-modules index.mjs"
+  },
+  "dependencies": {
+    "buttons-api": "0.0.1",
+    "buttons-db": "0.0.1",
+    "buttons-env": "0.0.1",
+    "koa": "^2.7.0",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.10.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}

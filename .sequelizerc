@@ -1,0 +1,10 @@
+const path = require('path')
+
+const root = path.join(__dirname, 'packages/buttons-db')
+
+module.exports = {
+  config: path.join(root, '/config/config.js'),
+  'models-path': path.join(root, 'models'),
+  'seeders-path': path.join(root, 'seeders'),
+  'migrations-path': path.join(root, 'migrations')
+}

@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "name": "buttons-db",
+  "version": "0.0.1",
+  "dependencies": {
+    "sequelize": "^4.43.0",
+    "sqlite3": "^4.0.6"
+  }
+}

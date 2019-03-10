@@ -1,0 +1,4 @@
+.env
+db.sqlite
+lerna-debug.log
+node_modules

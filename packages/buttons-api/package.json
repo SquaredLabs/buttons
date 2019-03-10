@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "name": "buttons-api",
+  "version": "0.0.1",
+  "dependencies": {
+    "koa-router": "^7.4.0"
+  }
+}
