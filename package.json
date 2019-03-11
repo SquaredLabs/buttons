@@ -2,7 +2,7 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "dev:backend": "cd packages/buttons && npm run dev",
+    "dev:backend": "NODE_ENV=development nodemon --experimental-modules packages/buttons",
     "lint": "standard **/*.js **/*.mjs"
   },
   "repository": {
@@ -22,6 +22,7 @@
     "sqlite3": "^4.0.6"
   },
   "devDependencies": {
+    "nodemon": "^1.18.10",
     "standard": "^12.0.1"
   }
 }
