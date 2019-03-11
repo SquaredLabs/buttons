@@ -2,7 +2,8 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "dev:backend": "cd packages/buttons && npm run dev"
+    "dev:backend": "cd packages/buttons && npm run dev",
+    "lint": "standard **/*.js **/*.mjs"
   },
   "repository": {
     "type": "git",
@@ -19,5 +20,8 @@
     "sequelize": "^4.43.0",
     "sequelize-cli": "^5.4.0",
     "sqlite3": "^4.0.6"
+  },
+  "devDependencies": {
+    "standard": "^12.0.1"
   }
 }
