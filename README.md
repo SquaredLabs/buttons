@@ -15,8 +15,8 @@ $ npx lerna bootstrap
 $ npx sequelize db:migrate
 ```
 
-## Running
+## Development
 
 ```sh
-$ npm start
+$ npm run dev:backend
 ```
