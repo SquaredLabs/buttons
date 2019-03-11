@@ -1,6 +1,6 @@
 # Squared Buttons
 
-A simple website for keeping track of who's logged in.
+A simple website for keeping track of who's in for work.
 
 ## Setup
 
