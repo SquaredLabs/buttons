@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "dependencies": {
     "koa-body": "^4.1.0",
+    "koa-csrf": "^3.0.7",
     "koa-router": "^7.4.0",
     "koa2-cas": "^1.0.5",
     "lodash": "^4.17.11"
