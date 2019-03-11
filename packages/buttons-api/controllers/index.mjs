@@ -1,7 +1,9 @@
 import auth from './auth'
+import locations from './locations'
 import users from './users'
 
-export default [
+export default {
   auth,
+  locations,
   users
-]
+}
