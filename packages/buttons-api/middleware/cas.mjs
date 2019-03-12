@@ -6,7 +6,7 @@ const cas = new Cas({
   cas_version: '2.0',
   renew: true,
   session_name: 'netid',
-  is_dev_mode: process.env.NODE_ENV === 'development',
+  is_dev_mode: process.env.NODE_ENV === 'development' && process.env.CAS_DEV_USER,
   dev_mode_user: process.env.CAS_DEV_USER
 })
 
