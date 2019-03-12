@@ -2,7 +2,7 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "dev:backend": "NODE_ENV=development nodemon --experimental-modules packages/buttons",
+    "dev:backend": "cross-env NODE_ENV=development nodemon --experimental-modules packages/buttons",
     "lint": "standard **/*.js **/*.mjs"
   },
   "repository": {
@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/SquaredLabs/buttons#readme",
   "dependencies": {
+    "cross-env": "^5.2.0",
     "lerna": "^3.13.1",
     "sequelize": "^4.43.0",
     "sequelize-cli": "^5.4.0",
