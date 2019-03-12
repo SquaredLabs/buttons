@@ -16,7 +16,9 @@ const app = new Koa()
 app.keys = [process.env.APP_KEY]
 app.context.db = db
 
-app.use(session(app))
+app.use(session({
+  httpOnly: false
+}, app))
 
 const router = new Router()
 
