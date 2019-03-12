@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev:backend": "cross-env NODE_ENV=development nodemon --experimental-modules packages/buttons",
+    "start:backend": "cross-env NODE_ENV=production node --experimental-modules packages/buttons",
     "lint": "standard **/*.js **/*.mjs"
   },
   "repository": {
