@@ -4,7 +4,7 @@
   "scripts": {
     "dev:backend": "cross-env NODE_ENV=development nodemon --experimental-modules packages/buttons",
     "start:backend": "cross-env NODE_ENV=production node --experimental-modules packages/buttons",
-    "lint": "standard **/*.js **/*.mjs"
+    "lint": "eslint --ext .js,.mjs ./"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,17 @@
     "sqlite3": "^4.0.6"
   },
   "devDependencies": {
-    "nodemon": "^1.18.10",
-    "standard": "^12.0.1"
+    "babel-eslint": "^9.0.0",
+    "eslint": "=5.12.0",
+    "eslint-config-react-app": "^3.0.8",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^4.0.0",
+    "nodemon": "^1.18.10"
   }
 }
