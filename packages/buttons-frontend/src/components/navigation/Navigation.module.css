@@ -1,0 +1,23 @@
+.navigation {
+  margin: 20px 10px 20px 10px;
+}
+
+.navItem {
+  font-family: arial, Helvetica, sans-serif;
+  margin: 3px;
+  color: black;
+  background-color: #f4f4f4;
+  border-radius: 2px;
+  border: black solid 1px;
+  text-decoration: none;
+  padding: 4px;
+}
+
+.navItem:active {
+  background-color: lightgray;
+  font-size: 15px
+}
+
+.navItem:hover {
+  box-shadow: 1px 1px 2px gray;
+}

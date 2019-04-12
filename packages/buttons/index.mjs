@@ -12,6 +12,7 @@ if (!process.env.APP_KEY) {
 }
 
 const app = new Koa()
+app.proxy = true
 
 app.keys = [process.env.APP_KEY]
 app.context.db = db
@@ -19,6 +20,11 @@ app.context.db = db
 app.use(session({
   httpOnly: false
 }, app))
+
+app.use(async (ctx, next) => {
+  console.log(ctx.host)
+  await next()
+})
 
 const router = new Router()
 

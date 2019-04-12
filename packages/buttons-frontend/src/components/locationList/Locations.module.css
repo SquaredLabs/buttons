@@ -1,0 +1,55 @@
+.locations {
+  background: #f4f4f4;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px gray;
+  min-width: 30%;
+  padding: 1em;
+  margin: 1em;
+}
+
+.location {
+  vertical-align: top;
+  display: inline-block;
+  margin: 20px 10px 20px 10px;
+  background-color: #8acae5;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px lightgray;
+  padding: 0px 10px 0px 10px;
+  min-width: 35%
+}
+
+.locationsHeader {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.indivLocHeader {
+  text-align: center;
+  font-size: 18;
+  background-color: #0282e4;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+.locMember {
+  text-align: center;
+}
+.leaveButton {
+  margin: 3px;
+  color: black;
+  background-color: white;
+  border-radius: 2px;
+  border: black solid 1px;
+}
+
+.leaveButton:active {
+  background-color: lightgray;
+  font-size: 12px
+}
+
+.leaveButton:hover {
+  box-shadow: 1px 1px 2px gray;
+}

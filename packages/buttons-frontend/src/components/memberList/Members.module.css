@@ -1,0 +1,69 @@
+.members{
+  background: #f4f4f4;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px gray;
+  padding: 1em;
+  margin: 1em;
+}
+
+.usersHeader {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold
+}
+
+/*make it so when you hover over the name it shows the picture of the person?*/
+.indivMember {
+  margin: 10px;
+  text: 15px;
+  background-color: #ed9e60;
+  padding: 3px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px gray;
+  width: 200px;
+  text-align: center;
+}
+
+.dropdown {
+  visibility: hidden;
+  position: absolute;
+}
+
+.indivMember:hover .dropdown {
+  visibility: visible;
+  position: relative;
+  margin: 10px 30px 10px -10px;
+}
+
+.memberButton {
+  margin: 3px;
+  color: black;
+  background-color: white;
+  border-radius: 2px;
+  border: black solid 1px;
+  width: 50px;
+  height: 20px;
+}
+
+.selectedButton {
+  margin: 3px;
+  color: black;
+  background-color: lightgreen;
+  border-radius: 2px;
+  border: black solid 1px;
+  width: 50px;
+  height: 20px;
+}
+
+.memberButton:active {
+  background-color: lightgray;
+  font-size: 12px
+}
+
+.memberButton:hover {
+  box-shadow: 1px 1px 2px gray;
+}
+
+.memberButton:visited {
+  background-color: lightgreen;
+}

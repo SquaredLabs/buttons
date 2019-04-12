@@ -1,0 +1,15 @@
+.everything {
+  font-family: arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.membersLocationsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,27 @@
+
+.entry {
+  border: solid black 1px;
+  padding: 1px;
+  border-radius: 3px;
+  margin: 10px;
+}
+
+.entryHeader {
+  font-size: 20px;
+  margin: 5px 10px 5px 10px;
+}
+
+.entryInfo {
+  text-align: left;
+  margin: 2px 5px;
+}
+
+.entryInfoItem {
+  margin: 2px;
+}
+
+.subForm {
+  padding: 5px 5px 10px 5px;
+  border-bottom: dashed gray 1px;
+  margin: 5px 2px;
+}
