@@ -20,5 +20,20 @@ module.exports = (sequelize, DataTypes) => {
     User.belongsTo(models.Location)
   }
 
+  User.findByPkForSession = function (id) {
+    return User.findByPk(id, {
+      // Omit the image since it's too large to fit into a session
+      attributes: ['id', 'netid', 'name', 'administrator', 'LocationId']
+    })
+  }
+
+  User.findOrCreateByNetidForSession = function (netid) {
+    return User.findOrCreate(
+      { where: { netid } },
+      {
+        attributes: ['id', 'netid', 'name', 'administrator', 'LocationId']
+      })
+  }
+
   return User
 }

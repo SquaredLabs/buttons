@@ -32,11 +32,33 @@ router.param('user', async (id, ctx, next) => {
 })
 
 router.get('/', async ctx => {
-  ctx.body = await ctx.db.User.all()
+  const users = await ctx.db.User.all()
+  ctx.body = users.map(user => ({
+    ...user.dataValues,
+    image: user.image
+      ? `/api/users/${user.id}/image`
+      : null
+  }))
 })
 
 router.get('/:user(\\d+)', async ctx => {
-  ctx.body = ctx.user
+  const user = await ctx.db.User.findByPk(ctx.params.user)
+  ctx.body = {
+    ...user.dataValues,
+    image: user.image
+      ? `/api/users/${user.id}/image`
+      : null
+  }
+})
+
+router.get('/:user(\\d+)/image', async ctx => {
+  if (ctx.user.image && ctx.user.image.length > 0) {
+    const matches = ctx.user.image.match(/^data:(.*);base64,(.*)/)
+    const contentType = matches[1]
+    const payload = matches[2]
+    ctx.response.set('Content-Type', contentType)
+    ctx.body = Buffer.from(payload, 'base64')
+  }
 })
 
 router.post('/', guards.admin(), body(), async ctx => {
