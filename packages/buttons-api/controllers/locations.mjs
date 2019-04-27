@@ -19,11 +19,32 @@ router.param('location', async (id, ctx, next) => {
 })
 
 router.get('/', async ctx => {
-  ctx.body = await ctx.db.Location.all()
+  const locations = await ctx.db.Location.all()
+  ctx.body = locations.map(location => ({
+    ...location.dataValues,
+    image: location.image
+      ? `/api/locations/${location.id}/image`
+      : null
+  }))
 })
 
 router.get('/:location(\\d+)', async ctx => {
-  ctx.body = ctx.location
+  ctx.body = {
+    ...ctx.location.dataValues,
+    image: ctx.location.image
+      ? `/api/locations/${ctx.location.id}/image`
+      : null
+  }
+})
+
+router.get('/:location(\\d+)/image', async ctx => {
+  if (ctx.location.image && ctx.location.image.length > 0) {
+    const matches = ctx.location.image.match(/^data:(.*);base64,(.*)/)
+    const contentType = matches[1]
+    const payload = matches[2]
+    ctx.response.set('Content-Type', contentType)
+    ctx.body = Buffer.from(payload, 'base64')
+  }
 })
 
 router.post('/', guards.admin(), body(), async ctx => {
