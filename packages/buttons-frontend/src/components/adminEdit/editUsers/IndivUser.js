@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import styles from '../AdminEdit.module.css'
 
-class IndivMember extends Component {
+class IndivUser extends Component {
   state = {
-    id: this.props.member.id,
-    netid: this.props.member.netid,
-    name: this.props.member.name,
-    image: this.props.member.image,
-    administrator: this.props.member.administrator,
-    LocationId: this.props.member.LocationId,
+    id: this.props.user.id,
+    netid: this.props.user.netid,
+    name: this.props.user.name,
+    image: this.props.user.image,
+    administrator: this.props.user.administrator,
+    LocationId: this.props.user.LocationId,
   }
 
   onNetIdChange = (e) => {
@@ -20,8 +20,16 @@ class IndivMember extends Component {
   }
 
   onImageChange = (e) => {
-    this.setState({image: e.target.value})
-  }
+    const files = e.target.files;
+    console.log(files)
+
+    const reader = new FileReader();
+    reader.readAsDataURL(files[0]);
+    reader.onload = (e) => {
+      console.log(e.target.result)
+      this.setState({image: e.target.result})
+      }
+    }
 
   onAdminChange = (e) => {
     this.setState({administrator: e.target.value})
@@ -32,8 +40,8 @@ class IndivMember extends Component {
   }
 
   onSubmit = (e) => {
-    this.props.changeMemberData({
-      id: this.props.member.id,
+    this.props.changeUserData({
+      id: this.props.user.id,
       netid: this.state.netid,
       name: this.state.name,
       image: this.state.image,
@@ -44,7 +52,7 @@ class IndivMember extends Component {
 
   onDelete = (e) => {
     this.props.deleteUser({
-      id: this.props.member.id
+      id: this.props.user.id
       })
   }
 
@@ -54,57 +62,59 @@ class IndivMember extends Component {
   render () {
     return (
       <form onSubmit = {this.onSubmit} className = {styles['subForm']}>
-        <p>User:{this.props.member.name}</p>
-        <label>
+        <p>User:{this.props.user.name}</p>
+        <label className = {styles['formItem']}>
           netid:
           <input
             type='text'
             name='netId'
             value= {this.state.netid}
             onChange = {this.onNetIdChange}
-            placeholder = {this.props.member.netid}/>
+            placeholder = {this.props.user.netid}/>
         </label>
-        <label>
+        <label className = {styles['formItem']}>
           name:
           <input
             type='text'
             name='userName'
             value= {this.state.name}
             onChange = {this.onNameChange}
-            placeholder = {this.props.member.name}/>
+            placeholder = {this.props.user.name}/>
         </label>
-        <label>
+        <label className = {styles['formItem']}>
           image:
           <input
-            type='text'
+            type='file'
             name='userImage'
-            value= {this.state.image}
+            //value= {this.state.image
             onChange = {this.onImageChange}
-            placeholder = {this.props.member.image}/>
+            //placeholder = {this.props.user.image}
+            />
         </label>
-        <label>
+        <label className = {styles['formItem']}>
           admin:
           <input
             type='number'
             name='admin'
             value= {this.state.administrator}
             onChange = {this.onAdminChange}
-            placeholder = {this.props.member.administrator}/>
+            placeholder = {this.props.user.administrator}/>
         </label>
-        <label>
+        <label className = {styles['formItem']}>
           Location Id:
           <input
             type='number'
             name='locId'
             value= {this.state.locId}
             onChange = {this.onLocIdChange}
-            placeholder = {this.props.member.LocationId}/>
+            placeholder = {this.props.user.LocationId}/>
         </label>
         <input
+          className = {styles['formItem']}
           type='submit'
           value='Submit Change'
         />
-        <button onClick={this.onDelete}>
+        <button onClick={this.onDelete} className = {styles['formItem']}>
         Delete User
         </button>
       </form>
@@ -112,4 +122,4 @@ class IndivMember extends Component {
   }
 }
 
-export default IndivMember
+export default IndivUser

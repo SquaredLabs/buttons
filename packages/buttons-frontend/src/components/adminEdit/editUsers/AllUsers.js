@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import IndivUser from './IndivMember';
+import IndivUser from './IndivUser';
 import styles from '../AdminEdit.module.css'
 
-class AllMembers extends Component {
+class AllUsers extends Component {
   render () {
     return (
       <div className = {styles['entry']}>
         <p className= {styles['entryHeader']}>Edit Users:</p>
-        {this.props.members.map((member) =>
+        {this.props.users.map((user) =>
           <IndivUser
-            key = {member.id}
-            member = {member}
-            changeMemberData = {this.props.changeMemberData}
+            key = {user.id}
+            user = {user}
+            changeUserData = {this.props.changeUserData}
             deleteUser = {this.props.deleteUser}
           />
         )}
@@ -20,4 +20,4 @@ class AllMembers extends Component {
   }
 }
 
-export default AllMembers
+export default AllUsers

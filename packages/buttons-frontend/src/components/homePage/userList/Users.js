@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import MemberItem from './MemberItem';
+import UserItem from './UserItem';
 import PropTypes from 'prop-types';
-import styles from './Members.module.css';
+import styles from './Users.module.css';
 
-class Members extends Component {
+class Users extends Component {
   render () {
     return (
-      <div className = {styles['members']}>
+      <div className = {styles['users']}>
         <p className = {styles['usersHeader']}>Users</p>
-      {this.props.members.map((member) => (
-      <MemberItem
-        key = {member.id}
-        member = {member}
+      {this.props.users.map((user) => (
+      <UserItem
+        key = {user.id}
+        user = {user}
         locations = {this.props.locations}
         changeLocHelp = {this.props.changeLocHelp}
       />
@@ -21,4 +21,4 @@ class Members extends Component {
   }
 }
 
-export default Members;
+export default Users;

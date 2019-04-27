@@ -8,8 +8,64 @@ h1 {
   margin-bottom: 30px;
 }
 
-.membersLocationsContainer {
+.usersLocationsContainer {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* .loadingContainer {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+} */
+
+@keyframes loadingAnimation {
+  0% {transform: rotate(0deg)}
+  50% {transform: rotate(360deg)}
+  100% {transform: rotate(0deg)}
+}
+
+@keyframes loadingAnimation2 {
+  0% {right: 100px; width: 30px; height: 30px}
+  25% {right: 0px; width: 50px; height: 50px}
+  50% {right: -100px; width: 30px; height: 30px}
+  75% {right: 0px; width: 50px; height: 50px}
+  100%  {right: 100px; width: 30px; height: 30px}
+}
+
+.loadingItem {
+  position: relative;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0,0,0,0);
+  border-color: black;
+  border-top: solid;
+  border-right: solid;
+  border-bottom: solid transparent;
+  border-left: solid transparent;
+  border-radius: 50%;
+  animation-name: loadingAnimation;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.loadingItem2 {
+  position: relative;
+  margin: auto;
+  width: 30px;
+  height: 30px;
+  top: 100px;
+  background-color: darkgray;
+  border-radius: 50%;
+  align-self: center;
+  animation-name: loadingAnimation2;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }

@@ -63,4 +63,11 @@ router.delete('/:user(\\d+)', guards.admin(), body(), async ctx => {
   ctx.status = 200
 })
 
+router.delete('/:user(\\d+)/LocationId', guards.login(), async ctx => {
+  await ctx.user.update(
+    { LocationId: null },
+    { where: { id: ctx.params.id } }
+  )
+})
+
 export default router

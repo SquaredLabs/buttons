@@ -19,8 +19,16 @@ class AddUser extends Component {
   }
 
   onImageChange = (e) => {
-    this.setState({image: e.target.value})
-  }
+    const files = e.target.files;
+    console.log(files)
+
+    const reader = new FileReader();
+    reader.readAsDataURL(files[0]);
+    reader.onload = (e) => {
+      console.log(e.target.result)
+      this.setState({image: e.target.result})
+      }
+    }
 
   onAdminChange = (e) => {
     this.setState({admin: e.target.admin})
@@ -68,11 +76,10 @@ class AddUser extends Component {
           <label className= {styles['entryInfoItem']}>
             image:
             <input
-              type='text'
+              type='file'
               name='userImage'
-              value= {this.state.image}
               onChange = {this.onImageChange}
-              placeholder = 'Image'/>
+              />
           </label>
           <label className= {styles['entryInfoItem']}>
             admin:

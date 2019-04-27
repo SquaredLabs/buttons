@@ -15,6 +15,9 @@ class Navigation extends Component {
         <NavLink className={styles['navItem']} to='/admin'>
           Admin
         </NavLink>
+        <NavLink className={styles['navItem']} to='/logout'>
+          Logout
+        </NavLink>
       </div>
       )
   }

@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
-import LocMembers from './LocMembers';
+import LocUsers from './LocUsers';
 import PropTypes from 'prop-types';
 import styles from './Locations.module.css'
 
 class LocationItem extends Component {
   render () {
-    const locMembers = this.props.members.filter(
-      member => member.LocationId === this.props.location.id
+    const locUsers = this.props.users.filter(
+      user => user.LocationId === this.props.location.id
     )
     return (
       <div className = {styles['location']}>
-        <p className = {styles['indivLocHeader']}>
-          {this.props.location.name}
-        </p>
-        {locMembers.map((member) =>
-          <LocMembers
-            key = {member.id}
-            locMember = {member}
+        <div className = {styles['indivLocContent']}>
+          <p className = {styles['indivLocTitle']}>{this.props.location.name}</p>
+        {locUsers.map((user) =>
+          <LocUsers
+            key = {user.id}
+            locUser = {user}
             leaveLoc = {this.props.leaveLoc}
             leaveLocHelp = {this.props.leaveLocHelp}
           />)}
+        </div>
     </div>
   )
   }

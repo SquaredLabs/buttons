@@ -1,4 +1,7 @@
-.members{
+.users{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: #f4f4f4;
   border-radius: 5px;
   box-shadow: 5px 5px 5px gray;
@@ -13,7 +16,7 @@
 }
 
 /*make it so when you hover over the name it shows the picture of the person?*/
-.indivMember {
+.indivUser {
   margin: 10px;
   text: 15px;
   background-color: #ed9e60;
@@ -24,18 +27,46 @@
   text-align: center;
 }
 
-.dropdown {
-  visibility: hidden;
-  position: absolute;
+
+.activeUser {
+  margin: .4em;
+  display: flex;
+  justify-content: center;
+  text: 15px;
+  background-color: lightgreen;
+  padding:.3em;
+  width: 12em;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px gray;
 }
 
-.indivMember:hover .dropdown {
-  visibility: visible;
-  position: relative;
-  margin: 10px 30px 10px -10px;
+.inactiveUser {
+  display: flex;
+  justify-content: center;
+  margin: .4em;
+  text: 15px;
+  background-color: lightgray;
+  padding: .3em;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px gray;
+  width: 12em;
 }
 
-.memberButton {
+.userInfo {
+  display: flex;
+  align-items: center;
+}
+.userImage {
+  display: flex;
+}
+
+.nonAdminButtons {
+  display: flex;
+  align: center;
+}
+
+
+.userButton {
   margin: 3px;
   color: black;
   background-color: white;
@@ -48,22 +79,22 @@
 .selectedButton {
   margin: 3px;
   color: black;
-  background-color: lightgreen;
+  background-color: #8acae5;
   border-radius: 2px;
   border: black solid 1px;
   width: 50px;
   height: 20px;
 }
 
-.memberButton:active {
+.userButton:active {
   background-color: lightgray;
   font-size: 12px
 }
 
-.memberButton:hover {
+.userButton:hover {
   box-shadow: 1px 1px 2px gray;
 }
 
-.memberButton:visited {
+.userButton:visited {
   background-color: lightgreen;
 }
