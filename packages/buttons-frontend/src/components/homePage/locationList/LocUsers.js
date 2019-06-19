@@ -13,7 +13,7 @@ class LocUsers extends Component {
   render () {
     return (
       <p className={styles['locUser']}>
-        <img src= {this.props.locUser.image} height='42' width='42'/>
+        <img src= {this.props.locUser.image} className={styles['cover']} height='42' width='42'/>
         {this.props.locUser.name}
         <button
         className = {styles['leaveButton']}

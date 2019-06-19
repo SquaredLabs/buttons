@@ -30,3 +30,8 @@
 .formItem {
   margin: 5px;
 }
+
+label {
+  white-space: nowrap;
+  display: inline-block;
+}

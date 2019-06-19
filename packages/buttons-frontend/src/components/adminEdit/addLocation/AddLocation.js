@@ -12,8 +12,16 @@ class AddLocation extends Component {
   }
 
   onImageChange = (e) => {
-    this.setState({image: e.target.value})
-  }
+    const files = e.target.files;
+    console.log(files)
+
+    const reader = new FileReader();
+    reader.readAsDataURL(files[0]);
+    reader.onload = (e) => {
+      console.log(e.target.result)
+      this.setState({image: e.target.result})
+      }
+    }
 
   onSubmit = (e) => {
     this.props.addLocation({name: this.state.name, image: this.state.image})
@@ -40,10 +48,8 @@ class AddLocation extends Component {
           <label className= {styles['entryInfoItem']}>
             image:
             <input
-              type='text'
+              type='file'
               name='locImage'
-              placeholder = 'Image'
-              value = {this.state.image}
               onChange = {this.onImageChange}
               />
           </label>

@@ -20,12 +20,9 @@ class AddUser extends Component {
 
   onImageChange = (e) => {
     const files = e.target.files;
-    console.log(files)
-
     const reader = new FileReader();
     reader.readAsDataURL(files[0]);
     reader.onload = (e) => {
-      console.log(e.target.result)
       this.setState({image: e.target.result})
       }
     }

@@ -10,7 +10,7 @@ import AddLocation from './components/adminEdit/addLocation/AddLocation';
 import Error from './components/error/Error';
 import UsersAlt from './components/homePage/usersNotAdmin/UsersAlt';
 import NoAccess from './components/adminEdit/noAccess/NoAccess';
-import Logout from './components/logout/Logout';
+// import Logout from './components/logout/Logout';
 import Cookies from 'js-cookie';
 import styles from './App.module.css';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
@@ -18,6 +18,7 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom';
 // Various functions that change user/location database info
 
 function getSession() {
+  console.log('abc')
   return JSON.parse(atob(Cookies.get('koa:sess')))
 }
 
@@ -168,10 +169,10 @@ async function deleteLoc(loc) {
   return (await res.json())
 }
 
-function logoutFunc() {
-  Cookies.remove('koa:sess', {path: '/'});
-}
-window.Cookies = Cookies
+// function logoutFunc() {
+//   Cookies.remove('koa:sess', {path: '/'});
+// }
+// window.Cookies = Cookies
 
 
 //Class App begins
@@ -264,13 +265,13 @@ leaveLocHelp = (user) => {
       )
   }
 
-  Logout = () => {
-    return (
-      <Logout
-        logoutFunc = {logoutFunc}
-      />
-      )
-  }
+  // Logout = () => {
+  //   return (
+  //     <Logout
+  //       logoutFunc = {logoutFunc}
+  //     />
+  //     )
+  // }
 
   AdminPage = () => {
     if (((JSON.parse(atob(Cookies.get('koa:sess')))).user.administrator) !== true) {
@@ -316,7 +317,7 @@ leaveLocHelp = (user) => {
             <Switch>
               <Route path='/' component = {this.HomePage} exact />
               <Route path='/admin' component = {this.AdminPage} />
-              <Route path ='/logout' component={this.Logout}/>
+              // <Route path ='/logout' component={this.Logout}/>
               <Route component={this.Error} />
             </Switch>
           </div>
