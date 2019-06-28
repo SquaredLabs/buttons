@@ -27,7 +27,7 @@
 }
 
 
-.activeUser {
+.activeUser, .inactiveUser {
   margin: .4em;
   display: flex;
   justify-content: center;
@@ -40,15 +40,7 @@
 }
 
 .inactiveUser {
-  display: flex;
-  justify-content: center;
-  margin: .4em;
-  text: 15px;
   background-color: lightgray;
-  padding: .3em;
-  border-radius: 3px;
-  box-shadow: 1px 1px 3px gray;
-  width: 12em;
 }
 
 .userInfo {
@@ -64,25 +56,17 @@
   align: center;
 }
 
-
-.userButton {
+.userButton, .selectedButton {
   margin: 3px;
   color: black;
   background-color: white;
   border-radius: 2px;
   border: black solid 1px;
-  width: 50px;
   height: 20px;
 }
 
 .selectedButton {
-  margin: 3px;
-  color: black;
   background-color: #8acae5;
-  border-radius: 2px;
-  border: black solid 1px;
-  width: 50px;
-  height: 20px;
 }
 
 .userButton:active {
