@@ -15,7 +15,6 @@
   font-weight: bold
 }
 
-/*make it so when you hover over the name it shows the picture of the person?*/
 .indivUser {
   margin: 10px;
   text: 15px;
@@ -23,7 +22,7 @@
   padding: 3px;
   border-radius: 3px;
   box-shadow: 1px 1px 3px gray;
-  width: 200px;
+  width: 12em;
   text-align: center;
 }
 
