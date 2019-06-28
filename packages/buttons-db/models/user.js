@@ -30,9 +30,7 @@ module.exports = (sequelize, DataTypes) => {
   User.findOrCreateByNetidForSession = function (netid) {
     return User.findOrCreate(
       { where: { netid } },
-      {
-        attributes: ['id', 'netid', 'name', 'administrator', 'LocationId']
-      })
+      )
   }
 
   return User
