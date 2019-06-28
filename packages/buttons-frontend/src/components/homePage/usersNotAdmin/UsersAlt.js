@@ -6,11 +6,11 @@ import PropTypes from 'prop-types';
 import Cookies from 'js-cookie';
 import styles from '../userList/Users.module.css';
 
-const userId = JSON.parse(atob(Cookies.get('koa:sess'))).user.id
-
 class UsersAlt extends Component {
 
   render () {
+    const userId = JSON.parse(atob(Cookies.get('koa:sess'))).user.id
+
     const currentUser = this.props.users.filter(
       user => user.id === userId
     )
