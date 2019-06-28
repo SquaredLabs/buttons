@@ -18,7 +18,6 @@ import { BrowserRouter, Route, Switch} from 'react-router-dom';
 // Various functions that change user/location database info
 
 function getSession() {
-  console.log('abc')
   return JSON.parse(atob(Cookies.get('koa:sess')))
 }
 
@@ -50,8 +49,6 @@ async function getLocations () {
 }
 
 async function changeLoc(user) {
-  // console.log(user.locId)
-  // console.log(user.userId)
   const url = '/api/users/' + user.userId
   const res = await fetch(url, {
     method: 'PATCH',
@@ -93,7 +90,6 @@ async function changeLocData(location) {
 }
 
 async function changeUserData(user) {
-  console.log(user.name)
   const url = '/api/users/' + user.id
   const res = await fetch(url, {
     method: 'PATCH',
