@@ -13,7 +13,7 @@ router.get('/login', cas.bounce, async ctx => {
 
 router.get('/logout', async ctx => {
   ctx.session = null
-  ctx.redirect('/')
+  ctx.redirect('/api/auth/login')
 })
 
 export default router
