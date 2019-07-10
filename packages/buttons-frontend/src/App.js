@@ -155,14 +155,17 @@ async function deleteUser(user) {
 }
 
 async function deleteLoc(loc) {
-  const url = '/api/locations/' + loc.id
-  const res = await fetch(url, {
-    method: 'DELETE',
-    headers: {
-      'X-CSRF-Token': getSession().csrfToken
-    }
-    })
-  return (await res.json())
+  const result = window.confirm('Are you sure you want to delete this location?')
+  if (result) {
+    const url = '/api/locations/' + loc.id
+    const res = await fetch(url, {
+      method: 'DELETE',
+      headers: {
+        'X-CSRF-Token': getSession().csrfToken
+      }
+      })
+    return (await res.json())
+  }
 }
 
 // function logoutFunc() {
