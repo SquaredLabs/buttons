@@ -10,7 +10,6 @@ import AddLocation from './components/adminEdit/addLocation/AddLocation';
 import Error from './components/error/Error';
 import UsersAlt from './components/homePage/usersNotAdmin/UsersAlt';
 import NoAccess from './components/adminEdit/noAccess/NoAccess';
-// import Logout from './components/logout/Logout';
 import Cookies from 'js-cookie';
 import styles from './App.module.css';
 import { BrowserRouter, Route, Switch} from 'react-router-dom';
@@ -168,12 +167,6 @@ async function deleteLoc(loc) {
   }
 }
 
-// function logoutFunc() {
-//   Cookies.remove('koa:sess', {path: '/'});
-// }
-// window.Cookies = Cookies
-
-
 //Class App begins
 
 class App extends Component {
@@ -264,14 +257,6 @@ leaveLocHelp = (user) => {
       )
   }
 
-  // Logout = () => {
-  //   return (
-  //     <Logout
-  //       logoutFunc = {logoutFunc}
-  //     />
-  //     )
-  // }
-
   AdminPage = () => {
     if (((JSON.parse(atob(Cookies.get('koa:sess')))).user.administrator) !== true) {
       return (
@@ -316,7 +301,7 @@ leaveLocHelp = (user) => {
             <Switch>
               <Route path='/' component = {this.HomePage} exact />
               <Route path='/admin' component = {this.AdminPage} />
-              // <Route path ='/logout' component={this.Logout}/>
+              <Route location ='/api/auth/logout' render = {() => window.location.reload()}/>
               <Route component={this.Error} />
             </Switch>
           </div>
