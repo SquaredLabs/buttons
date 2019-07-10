@@ -9,9 +9,6 @@ class Navigation extends Component {
         <NavLink className={styles['navItem']} to='/'>
           Home
         </NavLink>
-        <NavLink className={styles['navItem']} to= '/api/auth/login'>
-          Log In
-        </NavLink>
         <NavLink className={styles['navItem']} to='/admin'>
           Admin
         </NavLink>
