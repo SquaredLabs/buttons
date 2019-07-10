@@ -10,7 +10,6 @@ if (!koacookie || JSON.parse(atob(koacookie)).netid === undefined) {
   window.reload = true
   window.location = '/api/auth/login'
 } else {
-  console.log(JSON.parse(atob(koacookie)) )
   ReactDOM.render(<App />, document.getElementById('root'))
 }
 
