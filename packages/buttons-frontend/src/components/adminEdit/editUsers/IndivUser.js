@@ -53,10 +53,8 @@ class IndivUser extends Component {
   onDelete = (e) => {
     this.props.deleteUser({
       id: this.props.user.id
-      })
+    })
   }
-
-
 
 
   render () {
@@ -91,19 +89,17 @@ class IndivUser extends Component {
           <input
             type='file'
             name='userImage'
-            //value= {this.state.image
             onChange = {this.onImageChange}
-            //placeholder = {this.props.user.image}
-            />
+          />
         </label>
         <label className = {styles['formItem']}>
           admin:
           <input
-            type='number'
+            type='boolean'
             name='admin'
             value= {this.state.administrator}
             onChange = {this.onAdminChange}
-            placeholder = {this.props.user.administrator}/>
+            placeholder = {this.props.user.administrator.toString()}/>
         </label>
         <label className = {styles['formItem']}>
           Location Id:
@@ -114,11 +110,11 @@ class IndivUser extends Component {
             onChange = {this.onLocIdChange}
             placeholder = {this.props.user.LocationId}/>
         </label>
-        <input
+        <button
           className = {styles['formItem']}
-          type='submit'
-          value='Submit Change'
-        />
+          type='submit'>
+          Submit Change
+        </button>
         <button onClick={this.onDelete} className = {styles['formItem']}>
         Delete User
         </button>
