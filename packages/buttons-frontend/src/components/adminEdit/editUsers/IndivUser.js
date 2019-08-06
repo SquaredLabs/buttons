@@ -9,6 +9,7 @@ class IndivUser extends Component {
     image: this.props.user.image,
     administrator: this.props.user.administrator,
     LocationId: this.props.user.LocationId,
+    imageChanged: false,
   }
 
   onNetIdChange = (e) => {
@@ -19,16 +20,18 @@ class IndivUser extends Component {
     this.setState({name: e.target.value})
   }
 
+  setImage = (file) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file[0]);
+    reader.onload = (e) => {
+      this.setState({image: e.target.result})
+    }
+  }
+
   onImageChange = (e) => {
     const files = e.target.files;
-    console.log(files)
-
-    const reader = new FileReader();
-    reader.readAsDataURL(files[0]);
-    reader.onload = (e) => {
-      console.log(e.target.result)
-      this.setState({image: e.target.result})
-      }
+    this.setState({imageChanged: true});
+    this.setImage(files)
     }
 
   onAdminChange = (e) => {
@@ -40,14 +43,27 @@ class IndivUser extends Component {
   }
 
   onSubmit = (e) => {
-    this.props.changeUserData({
-      id: this.props.user.id,
-      netid: this.state.netid,
-      name: this.state.name,
-      image: this.state.image,
-      administrator: this.state.administrator,
-      LocationId: this.state.LocationId
+    if (this.state.imageChanged === true) {
+      this.props.changeUserData({
+        id: this.props.user.id,
+        netid: this.state.netid,
+        name: this.state.name,
+        image: this.state.image,
+        administrator: this.state.administrator,
+        LocationId: this.state.LocationId
       })
+      e.preventDefault()
+    }
+    else {
+      this.props.changeUserData({
+        id: this.props.user.id,
+        netid: this.state.netid,
+        name: this.state.name,
+        administrator: this.state.administrator,
+        LocationId: this.state.LocationId
+      })
+      e.preventDefault()
+    }
   }
 
   onDelete = (e) => {
