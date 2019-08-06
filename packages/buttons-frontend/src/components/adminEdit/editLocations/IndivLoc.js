@@ -16,7 +16,12 @@ class IndivLoc extends Component {
   }
 
   onSubmit = (e) => {
-    this.props.changeLocData({id: this.props.location.id, name: this.state.name, image: this.state.image})
+    this.props.changeLocData({
+      id: this.props.location.id,
+      name: this.state.name,
+      image: this.state.image
+    })
+    e.preventDefault()
   }
 
   onDelete = (e) => {
@@ -30,7 +35,7 @@ class IndivLoc extends Component {
       <form onSubmit = {this.onSubmit} className = {styles['subForm']}>
         <p>Location ID:{this.props.location.id}</p>
         <br/>
-        <label>
+        <label className = {styles['formItem']}>
           name:
           <input
             type='text'
@@ -39,7 +44,7 @@ class IndivLoc extends Component {
             onChange = {this.onNameChange}
             placeholder = {this.props.location.name}/>
         </label>
-        <label>
+        <label className = {styles['formItem']}>
           image:
           <input
             type='text'
@@ -48,9 +53,9 @@ class IndivLoc extends Component {
             onChange = {this.onImageChange}
             placeholder = {this.props.location.img}/>
         </label>
-        <input
-          type='submit'
-          value='Submit Change'/>
+        <button className = {styles['formItem']}>
+          Submit Change
+        </button>
         <button onClick = {this.onDelete}>
           Delete Location
         </button>
