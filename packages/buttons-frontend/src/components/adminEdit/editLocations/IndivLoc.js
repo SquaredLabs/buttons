@@ -47,11 +47,9 @@ class IndivLoc extends Component {
         <label className = {styles['formItem']}>
           image:
           <input
-            type='text'
+            type='file'
             name='locImage'
-            value = {this.state.image}
-            onChange = {this.onImageChange}
-            placeholder = {this.props.location.img}/>
+            onChange = {this.onImageChange}/>
         </label>
         <button className = {styles['formItem']}>
           Submit Change
