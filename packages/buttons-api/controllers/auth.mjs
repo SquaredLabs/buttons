@@ -6,8 +6,7 @@ router.prefix('/auth')
 
 router.get('/login', cas.bounce, async ctx => {
   const netid = ctx.session.netid
-  const [ user ] = await ctx.db.User.findOrCreateByNetidForSession(netid)
-  ctx.session.user = user
+  ctx.session.user = await ctx.db.User.findOrCreateByNetidForSession(netid)
   ctx.redirect('/')
 })
 

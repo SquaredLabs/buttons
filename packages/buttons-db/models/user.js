@@ -27,11 +27,16 @@ module.exports = (sequelize, DataTypes) => {
     })
   }
 
-  User.findOrCreateByNetidForSession = function (netid) {
+  User.findOrCreateByNetid = function (netid) {
     return User.findOrCreate(
-      { where: { netid } },
-      )
+      { where: { netid } }
+    )
   }
 
+  User.findOrCreateByNetidForSession = async function (netid) {
+    const [ allAttributes ] = await User.findOrCreateByNetid(netid)
+    const essentialAttributes = await User.findByPkForSession(allAttributes.id)
+    return essentialAttributes
+  }
   return User
 }
