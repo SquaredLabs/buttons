@@ -81,6 +81,11 @@ class IndivUser extends Component {
             onChange = {this.onNameChange}
             placeholder = {this.props.user.name}/>
         </label>
+        <img
+          src= {this.state.image}
+          className={styles['cover']}
+          height='42' width='42'
+        />
         <label className = {styles['formItem']}>
           image:
           <input
