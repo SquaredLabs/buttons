@@ -12,7 +12,7 @@ import UsersAlt from './components/homePage/usersNotAdmin/UsersAlt';
 import NoAccess from './components/adminEdit/noAccess/NoAccess';
 import Cookies from 'js-cookie';
 import styles from './App.module.css';
-import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
 
 // Various functions that change user/location database info
 
@@ -264,7 +264,7 @@ leaveLocHelp = (user) => {
         )
     }
     return (
-      <div className>
+      <div>
         <AddUser
           addUser = {addUser}
         />
@@ -301,7 +301,6 @@ leaveLocHelp = (user) => {
             <Switch>
               <Route path='/' component = {this.HomePage} exact />
               <Route path='/admin' component = {this.AdminPage} />
-              <Route location ='/api/auth/logout' render = {() => window.location.reload()}/>
               <Route component={this.Error} />
             </Switch>
           </div>
